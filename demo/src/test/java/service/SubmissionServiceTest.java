@@ -1,5 +1,4 @@
-package com.example.demo;
-
+package service;
 
 import com.example.demo.model.SubmissionDTO;
 import com.example.demo.repo.SubmissionRepoClass;

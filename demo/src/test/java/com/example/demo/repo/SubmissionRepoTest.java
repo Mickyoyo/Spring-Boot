@@ -19,7 +19,7 @@ public class SubmissionRepoTest {
     @Test
     public void test_addSubmission() throws Exception{
 
-        SubmissionDTO dto= getSubmission("25-1-2023","narain","java","Uday","pavan");
+        SubmissionDTO dto= getSubmission("25-1-2023","","java","naveen","hari");
         Class<?> myClass = SubmissionRepoClass.class;
         Field privateField = myClass.getDeclaredField("submissions");
         privateField.setAccessible(true);
@@ -36,13 +36,13 @@ public class SubmissionRepoTest {
 
     @Test
     public void test_updateSubmission() throws NoSuchFieldException, IllegalAccessException {
-        SubmissionDTO dto= getSubmission("25-1-2023","narain","java","Uday","pavan");
+        SubmissionDTO dto= getSubmission("25-1-2023","uday","java","naveen","hari");
         Class<?> myClass = SubmissionRepoClass.class;
         Field privateField = myClass.getDeclaredField("submissions");
         privateField.setAccessible(true);
         HashMap<String,SubmissionDTO> hm = (HashMap<String, SubmissionDTO>) privateField.get(sRep);
         hm.put("id-1",dto);
-        SubmissionDTO dto1= getSubmission("25-1-2023","narain","java","Srihari","pavan");
+        SubmissionDTO dto1= getSubmission("25-1-2023","uday","java","Srihari","naveen");
         dto1.setId("id-1");
         SubmissionDTO result = sRep.updateSubmission(dto1);
 
